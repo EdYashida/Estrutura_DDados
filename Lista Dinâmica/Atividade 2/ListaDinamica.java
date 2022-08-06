@@ -19,8 +19,5 @@ public void imprime(){
     System.out.println(aux.toString());
     aux = aux.proximo;
   }
-
 }
-  
-
 }
