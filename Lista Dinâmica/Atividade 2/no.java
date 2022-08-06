@@ -1,6 +1,5 @@
 
- 
-    public class No{
+  public class No{
     Atleta at;
     No proximo;
 
