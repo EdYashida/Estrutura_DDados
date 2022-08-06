@@ -5,49 +5,61 @@ public class main {
     public static void main(String[] args) {
        
         ListaDinamica lista = new ListaDinamica();
-        
-        Atleta atleta[]= new Atleta [10];           //permite insercao de 10 atletas
-        Scanner teclado= new Scanner(System.in);
-        int continuar;
 
+        Scanner teclado= new Scanner(System.in);    //scaner de entradas
+        int continuar;                              //controla se o loop continua
+        int i=0;                                    //indice pro loop
         
         System.out.println("Digite 1 para inserir elemento, 2 para imprimir lista, ou qualquer outra tecla para encerrar programa");
         continuar = teclado.nextInt();
         String tiraLinha = teclado.nextLine();
             
-        for(int i=0;continuar == 1 || continuar == 2;i++){
+        while(continuar == 1 || continuar == 2){
             
             
             
             if(continuar==1){
+                
+                Atleta atleta=new Atleta();
+                
                 System.out.println("Insira o nome do atleta: ");
-                atleta[i].nome = teclado.nextLine();
-                
-                System.out.println("Insira a altura do atleta: ");
-                atleta[i].altura = teclado.nextFloat();
-                tiraLinha = teclado.nextLine();
-                
-                System.out.println("Insira o peso do atleta: ");
-                atleta[i].peso= teclado.nextFloat();
-                tiraLinha = teclado.nextLine();
+                atleta.setNome(teclado.nextLine());              
                 
                 System.out.println("Insira a modalidade do atleta: ");
-                atleta[i].esporte= teclado.nextLine();
+                atleta.setEsporte(teclado.nextLine());
                  
                 
                 System.out.println("Insira os patrocinadores do atleta: ");
-                atleta[i].patrocinadores= teclado.nextLine();
+                atleta.setPatrocinadores(teclado.nextLine());
                 
-                lista.insere(new No(atleta[i]));
+                System.out.println("Insira a altura do atleta: ");
+                atleta.setAltura(teclado.nextFloat());
+                
+                System.out.println("Insira o peso do atleta: ");
+                atleta.setPeso(teclado.nextFloat());
+                
+                lista.insere(new No(atleta));
+                i++;
+                
+                System.out.println("Digite 1 para inserir elemento, 2 para imprimir lista, ou qualquer outra tecla para encerrar programa");
+                continuar = teclado.nextInt();
+                tiraLinha = teclado.nextLine();
             }
             
             else if(continuar==2){
                 lista.imprime();
+                
+                System.out.println("Digite 1 para inserir elemento, 2 para imprimir lista, ou qualquer outra tecla para encerrar programa");             
+                continuar = teclado.nextInt();
+                tiraLinha = teclado.nextLine();
+               
             }
             
             else if(i>=10){
                 System.out.println("Lista cheia");
             }
+            continuar = teclado.nextInt();
+            tiraLinha = teclado.nextLine();
             }
             
         }
