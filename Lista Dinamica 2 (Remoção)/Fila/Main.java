@@ -1,75 +1,28 @@
-import java.util.Scanner;
+public class Fila {
 
-public class main {
-    
     public static void main(String[] args) {
-       
         ListaDinamica lista = new ListaDinamica();
 
-        Scanner teclado= new Scanner(System.in);    //scaner de entradas
-        int continuar;                              //controla se o loop continua
-        int i=0;                                    //indice pro loop
-        
-        System.out.println("Digite 1 para inserir elemento, 2 para imprimir lista, 3 para remover elemento do inicio da lista ou qualquer outra tecla para encerrar programa");
-        continuar = teclado.nextInt();
-        String tiraLinha = teclado.nextLine();
-            
-        while(continuar == 1 || continuar == 2  ||  continuar == 3){
-            //Quando se faz uma escolha, o comando só é reconhecido na segunda vez em que é inserido
-            
-            
-            if(continuar==1){
-                
-                Atleta atleta=new Atleta();
-                
-                System.out.println("Insira o nome do atleta: ");
-                atleta.setNome(teclado.nextLine());              
-                
-                System.out.println("Insira a modalidade do atleta: ");
-                atleta.setEsporte(teclado.nextLine());
-                 
-                
-                System.out.println("Insira os patrocinadores do atleta: ");
-                atleta.setPatrocinadores(teclado.nextLine());
-                
-                System.out.println("Insira a altura do atleta: ");
-                atleta.setAltura(teclado.nextFloat());
-                
-                System.out.println("Insira o peso do atleta: ");
-                atleta.setPeso(teclado.nextFloat());
-                
-                lista.insere(new No(atleta));
-                i++;
-                
-                System.out.println("Digite 1 para inserir elemento, 2 para imprimir lista, 3 para remover elemento do inicio da lista ou qualquer outra tecla para encerrar programa");
-                continuar = teclado.nextInt();
-                tiraLinha = teclado.nextLine();
-            }
-            
-            else if(continuar==2){
-                lista.imprime();
-                
-                System.out.println("Digite 1 para inserir elemento, 2 para imprimir lista, 3 para remover elemento do inicio da lista ou qualquer outra tecla para encerrar programa");             
-                continuar = teclado.nextInt();
-                tiraLinha = teclado.nextLine();
-               
-            }
-            
-            else if(continuar==3){
-                lista.remove();
-                
-                System.out.println("Digite 1 para inserir elemento, 2 para imprimir lista, 3 para remover elemento do inicio da lista ou qualquer outra tecla para encerrar programa");             
-                continuar = teclado.nextInt();
-                tiraLinha = teclado.nextLine();
-               
-            }
-            
-            else if(i>=10){
-                System.out.println("Lista cheia");
-            }
-            continuar = teclado.nextInt();
-            tiraLinha = teclado.nextLine();
-            }           
-        }
-    }
+           Atleta atleta1=new Atleta("Dustin",1.77f,70.7f,"MMA","UFC");
+           Atleta atleta2=new Atleta("Morpheu",1.80f,54.8f,"Atletismo","Vertigo");
+           Atleta atleta3=new Atleta("Jotaro",1.90f,83.3f,"Boxe","Araki");
+           Atleta atleta4=new Atleta("Joseph",1.88f,80.2f,"Atletismo","Hirohiko");
+           Atleta atleta5=new Atleta("Vegeta",1.69f,74.1f,"Karate","Akira");
+           
 
+           lista.insere(new No(atleta1));
+           lista.insere(new No(atleta2));
+           lista.insere(new No(atleta3));
+           lista.insere(new No(atleta4));
+           lista.insere(new No(atleta5));
+           
+           lista.imprime();
+           
+           lista.remove();
+           
+           System.out.println("");
+           System.out.println("Fila apos remocao:");
+           
+           lista.imprime();
+    }
+    }
