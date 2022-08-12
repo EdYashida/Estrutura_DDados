@@ -21,11 +21,13 @@ public void imprime(){
   }
 }
 
-public void remove(){   //remocao inicio
-    No aux = inicio;
+public void remove(){   //remocao no inicio
+     No aux=inicio;
+     
     if(inicio == null){
         System.out.println("Não foi possivel remover nada, pois a lista esta vazia");
     }
+    
     else{
       inicio=aux.proximo;
       aux.proximo=null;
