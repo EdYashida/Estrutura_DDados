@@ -29,19 +29,14 @@ public void remove(){   //remocao no fim
     
     else{
     No aux = inicio;
-    No remover = null;
     No anterior = null;
     while(aux!=null){
       if (aux==fim){
-        remover = aux;
         break;
       }
       anterior = aux;
-      aux = aux.proximo;
-      
-      
+      aux = aux.proximo;       
     }
-
         fim = anterior;
         anterior.proximo=null;
 
