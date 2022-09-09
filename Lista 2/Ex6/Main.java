@@ -11,8 +11,11 @@ public class ED2E5 {
         ld.cadastraAluno(new No(a2));
         ld.cadastraAluno(new No(a3));
         
+        System.out.println("Buscando pelo nome...");
         ld.imprimeAluno("Eduardo");
         
+        System.out.println();
+        System.out.println("Imprimindo todos os alunos");
         ld.mostraTodos();
 
     }
