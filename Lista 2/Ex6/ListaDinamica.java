@@ -14,11 +14,11 @@ public class ListaDinamica {
        }
    }
    
-   public void imprimeAluno(String nome){
+   public void imprimeAluno(String procura){
        No aux=inicio;
        
        while(aux!=null){
-           if(aux.toString().contains(nome)){
+           if(aux.getAluno().nome==procura){
                System.out.println(aux.toString());
            }
            aux=aux.getProximo();
